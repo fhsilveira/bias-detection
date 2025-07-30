@@ -102,11 +102,11 @@ O processamento segue pipeline sequencial:
 
 ### Metodologia de LLM
 
-A seleção de modelos de linguagem grandes fundamenta-se em critérios técnicos específicos:
+A seleção de modelos de linguagem grandes fundamenta-se em alguns critérios:
 
-1. **Capacidade Analítica**: Os LLMs demonstram performance superior na detecção de padrões linguísticos complexos comparados a abordagens baseadas em regras
+1. **Capacidade Analítica**: Os LLMs demonstram boa performance inicial na detecção de padrões linguísticos complexos comparados a abordagens baseadas em regras
 
-2. **Estratégia de Destilação**: Os outputs dos LLMs são utilizados como dados de referência para:
+2. **Estratégia de Destilação**: Os outputs dos LLMs podem ser utilizados como dados de referência para:
    - Treinamento de modelos compactos
    - Geração de datasets anotados
    - Desenvolvimento de classificadores com redução de custo computacional
