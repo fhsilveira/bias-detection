@@ -1,0 +1,16 @@
+[project]
+name = "case-study"
+version = "0.1.0"
+description = "Case study to detect bias in Artificial Intelligence articles on Wikipedia"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.116.1",
+    "gradio>=5.38.2",
+    "huggingface-hub>=0.34.2",
+    "openai>=1.97.1",
+    "pydantic>=2.11.7",
+    "transformers>=4.54.0",
+    "uvicorn>=0.35.0",
+    "wikipedia>=1.4.0",
+]
