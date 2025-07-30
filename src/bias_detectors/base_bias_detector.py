@@ -14,14 +14,14 @@ class BaseBiasDetector(ABC):
     def detect(self, text: str) -> Dict[str, Any]:
         response = self.generate_completion(text)
         parsed_response = self.parse_response(response)
-        if parsed_response is None:
+        if parsed_response is None or not isinstance(parsed_response, dict):
             return {
                 "bias_type": "unknown",
                 "confidence": 0.0,
                 "excerpts": [],
                 "spans": [],
                 "reformulated_excerpts": [],
-                "explanation": "No response from model."
+                "explanation": ["No response from model or invalid response format."]
             }
         _, spans = self.reformulate_excerpts(text, parsed_response.get("excerpts", []), parsed_response.get("reformulated_excerpts", []))
         parsed_response.update({"spans": spans})
@@ -63,7 +63,11 @@ class BaseBiasDetector(ABC):
         json_str = re.sub(r",\s*(?=[}\]])", "", json_str)
 
         try:
-            return json.loads(json_str)
+            parsed_data = json.loads(json_str)
+            # Ensure explanation is always a list
+            if "explanation" in parsed_data and isinstance(parsed_data["explanation"], str):
+                parsed_data["explanation"] = [parsed_data["explanation"]]
+            return parsed_data
         except json.JSONDecodeError:
             return None
 
