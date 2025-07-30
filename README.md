@@ -102,7 +102,7 @@ O processamento segue pipeline sequencial:
 
 ### Metodologia de LLM
 
-A seleção de modelos de linguagem grandes fundamenta-se em alguns critérios:
+A seleção de modelos LLM adotada fundamenta-se em alguns critérios:
 
 1. **Capacidade Analítica**: Os LLMs demonstram boa performance inicial na detecção de padrões linguísticos complexos comparados a abordagens baseadas em regras
 
